@@ -36,12 +36,12 @@
 		</dependency>
 		
 		<!-- Tomcat embedded container-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-tomcat</artifactId>-->
+			<!--<scope>provided</scope>-->
+		<!--</dependency>-->
+		<!---->
 		
 		<!-- JSTL for JSP -->
 		<dependency>
@@ -55,7 +55,7 @@
 			<artifactId>tomcat-embed-jasper</artifactId>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- Need this to compile JSP,
 			tomcat-embed-jasper version is not working, no idea why -->
 		<dependency>
