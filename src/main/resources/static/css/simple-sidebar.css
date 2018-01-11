@@ -48,7 +48,7 @@
   color: #FFF;
   display: block;
   text-decoration: none;
-  padding-left: 60px;
+  /*padding-left: 60px;*/
 }
 
 .sidebar-nav li a span:before {

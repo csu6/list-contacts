@@ -1,5 +1,7 @@
 <%@ include file="layouts/header.jsp" %>
-	
+
+<h4><span class="fa fa-users solo"> Liste des personnes enregitrées</span></h4>
+<hr />	
 <table class="table">
   
   <thead class="thead-inverse">
@@ -13,32 +15,37 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-      <td>@twitter</td>
-      <td>
-	      <div class="row">
-		      <div class="col"><a href="#">Détails</a></div>
-		      <div class="col"><a href="#">Modifier</a></div>
-		      <div class="col"><a href="#">Supprimer</a></div>
-	      </div>
-      </td>
-    </tr>
+	<c:forEach items="${listPersonne}" var="person"> 
+	    <tr>
+	      <th scope="row">${person.id}</th>
+	      <td>${fn:toUpperCase(person.nom)}</td>
+	      <td>${fn:toUpperCase(fn:substring(person.prenom, 0, 1))}${fn:toLowerCase(fn:substring(person.prenom, 1,fn:length(person.prenom)))}</td>
+	      <td>${person.dateNaissance}</td>
+	      <td>${person.telephone}</td>
+	      <td>
+		      <div class="row">
+				<c:url value="/user" var="detailUser">
+				  <c:param name="id"   value="${person.id}" />
+				</c:url>
+				<c:url value="/edit" var="editUrl">
+				  <c:param name="id"   value="${person.id}" />
+				</c:url>
+				<c:url value="/delete" var="deleteUrl">
+				  <c:param name="id"   value="${person.id}" />
+				</c:url>
+			      <div class="col">
+			      	<a href="<c:out value="${detailUser}" />" class="btn btn-primary btn-sm" role="button">Détails</a>
+			      </div>
+			      <div class="col">
+			      	<a href="<c:out value="${editUrl}" />" class="btn btn-success btn-sm" role="button">Modifier</a>
+			      </div>
+			      <div class="col">
+			      	<a href="<c:out value="${deleteUrl}" />" class="btn btn-info btn-sm" role="button">Supprimer</a>
+			      </div>
+		      </div>
+	      </td>
+	    </tr>
+    </c:forEach>
   </tbody>
 </table>
 

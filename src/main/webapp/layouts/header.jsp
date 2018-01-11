@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -43,11 +44,11 @@
             <nav id="spy">
                 <ul class="sidebar-nav nav">
                     <li class="sidebar-brand">
-                        <a href="#home"><img style="width:80px;" src="images/logom2i.png" /></a>
+                        <a href="/"><img style="width:80px;" src="images/logom2i.png" /></a>
                     </li>
                     <li>
                         <a href="/home" data-scroll>
-                            <span class="fa fa-anchor solo">Accueil</span>
+                            <span class="fa fa-home solo">Accueil</span>
                         </a>
                     </li>
                     <li>
@@ -59,12 +60,12 @@
 				<c:url var="listPersonnes" value="list_personnes">
 				</c:url>
                         <a href="<c:out value="${listPersonnes}"/>" data-scroll>
-                            <span class="fa fa-anchor solo">Afficher personnes</span>
+                            <span class="fa fa-users solo">Afficher personnes</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#anch3" data-scroll>
-                            <span class="fa fa-anchor solo">Insérer personnnes</span>
+                        <a href="/register" data-scroll>
+                            <span class="fa fa-user-plus solo">Insérer personnnes</span>
                         </a>
                     </li>
                 </ul>

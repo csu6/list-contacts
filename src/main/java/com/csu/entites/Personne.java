@@ -7,23 +7,34 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 
 @Entity
 @Table(name = "personnes")
 public class Personne {
+	
 	@Id
 	@GeneratedValue
 	@Column(name = "id")
 	private Integer id;
 	
 	@NotNull
+	@NotEmpty(message = "Please provide an nom")
 	private String nom;
 	
 	@NotNull
+	@NotEmpty(message = "Please provide your prenom")
 	private String prenom;
+	
+	// Champ qui est censé ne contenir que la date
+	@Temporal(TemporalType.DATE)
 	private Date dateNaissance;
+	
 	private String telephone;
 
 	public Integer getId() {
