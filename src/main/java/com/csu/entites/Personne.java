@@ -10,8 +10,11 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.format.annotation.DateTimeFormat;
 
 
 @Entity
@@ -30,11 +33,17 @@ public class Personne {
 	@NotNull
 	@NotEmpty(message = "Please provide your prenom")
 	private String prenom;
+
+	@Email
+	private String email;
 	
-	// Champ qui est cens� ne contenir que la date
+	// Champ qui est cense ne contenir que la date
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "dd/MM/YYYY")
 	private Date dateNaissance;
-	
+
+	@Pattern(regexp = "\\d{3}-\\d{3}-\\d{3}",
+			message = "Numéro téléphone incorrect")
 	private String telephone;
 
 	public Integer getId() {
