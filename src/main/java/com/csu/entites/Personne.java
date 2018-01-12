@@ -42,8 +42,8 @@ public class Personne {
 	@DateTimeFormat(pattern = "dd/MM/YYYY")
 	private Date dateNaissance;
 
-	@Pattern(regexp = "\\d{3}-\\d{3}-\\d{3}",
-			message = "Numéro téléphone incorrect")
+	@Pattern(regexp = "\\d{2}\\d{2}\\d{2}\\d{2}\\d{2}",
+			message = "{user.telephone.empty}")
 	private String telephone;
 
 	public Integer getId() {

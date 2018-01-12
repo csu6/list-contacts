@@ -1,4 +1,4 @@
-<%@ include file="layouts/header.jsp" %>
+<%@ include file="../layouts/header.jsp" %>
  <div class="row">
   
                         <div class="jumbotron text-center" >
@@ -14,4 +14,4 @@
                     </div>
                 </div>
                 
-<%@ include file="layouts/footer.jsp" %>
+<%@ include file="../layouts/footer.jsp" %>

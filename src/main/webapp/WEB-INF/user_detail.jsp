@@ -1,4 +1,4 @@
-<%@ include file="layouts/header.jsp" %>
+<%@ include file="../layouts/header.jsp" %>
 
 <h4><span class="fa fa-user-plus solo"> Enregister une personne</span></h4>
 <hr />	
@@ -16,7 +16,7 @@
 
 	<form action="register" method="post">
 		<div class="form-group">
-			<label for="email">Prénom:</label> 
+			<label for="email">Prï¿½nom:</label> 
 			<input type="text" class="form-control" id="prenom" name="prenom">
 		</div>
 		<div class="form-group">
@@ -38,6 +38,6 @@
 
 
 
-<%@ include file="layouts/footer.jsp"%>
+<%@ include file="../layouts/footer.jsp"%>
 
 

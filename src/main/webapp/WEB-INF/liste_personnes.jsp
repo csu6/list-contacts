@@ -1,17 +1,28 @@
-<%@ include file="layouts/header.jsp" %>
+<%@ include file="../layouts/header.jsp" %>
 
-<h4><span class="fa fa-users solo"> Liste des personnes enregitrées</span></h4>
-<hr />	
+<h4><span class="fa fa-users solo"> Liste des personnes enregitrees</span></h4>
+<hr />
+
+<c:if test="${not empty confirmationMessage}">
+	<div class="alert alert-success alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert"
+				aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		<strong>${confirmationMessage}</strong>
+	</div>
+</c:if>
+
 <table class="table">
   
   <thead class="thead-inverse">
     <tr>
       <th>#</th>
       <th>Nom</th>
-      <th>Prénom</th>
+      <th>Prenom</th>
       <th>Date de naissance</th>
-      <th>Téléphone</th>
-      <th>Opérations</th>
+      <th>Telephone</th>
+      <th>Operations</th>
     </tr>
   </thead>
   <tbody>
@@ -34,7 +45,7 @@
 				  <c:param name="id"   value="${person.id}" />
 				</c:url>
 			      <div class="col">
-			      	<a href="<c:out value="${detailUser}" />" class="btn btn-primary btn-sm" role="button">Détails</a>
+			      	<a href="<c:out value="${detailUser}" />" class="btn btn-primary btn-sm" role="button">Details</a>
 			      </div>
 			      <div class="col">
 			      	<a href="<c:out value="${editUrl}" />" class="btn btn-success btn-sm" role="button">Modifier</a>
@@ -49,4 +60,4 @@
   </tbody>
 </table>
 
-<%@ include file="layouts/footer.jsp" %>
+<%@ include file="../layouts/footer.jsp" %>
